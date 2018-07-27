@@ -11,7 +11,8 @@ const Item = require('./Item')
 const defaultOptions = {
   paymentMethod: Constants.PaymentMethod.BankTransfer,
   currency: Constants.Currency.Ft,
-  language: Constants.Language.Hungarian
+  language: Constants.Language.Hungarian,
+  exchangeBank: 'MNB'
 }
 
 class Invoice {
@@ -60,7 +61,7 @@ class Invoice {
       [ 'penznem', this._options.currency.value ],
       [ 'szamlaNyelve', this._options.language.value ],
       [ 'megjegyzes', this._options.comment ],
-      // ['arfolyamBank', ],
+      [ 'arfolyamBank', this._options.exchangeBank ],
       // ['arfolyam', ],
       [ 'rendelesSzam', this._options.orderNumber ],
       // ['elolegszamla', ],
